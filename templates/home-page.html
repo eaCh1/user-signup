@@ -3,7 +3,7 @@
 {% block content %}
 
   <h1>Signup</h1>
-  <form method="POST">
+  <form action="/welcome" method="POST">
     <table>
       <tbody>
         <tr>
@@ -12,7 +12,12 @@
           </td>
           <td>
             <input name="username" type="text">
-            <span class="error"></span>
+            {{username}}
+            <span class="error">
+              {% if username|length == 1 %}
+              That's not a valid username
+              {% endif %}
+            </span>
           </td>
         </tr>
         <tr>
@@ -21,7 +26,11 @@
           </td>
           <td>
             <input name="password" type="password">
-            <span clas
+            <span class="error">
+              {% if password|length == 1 %}
+              <td>That's not a valid password</td>
+              {% endif %}
+            </span>
           </td>
         </tr>
         <tr>
@@ -39,6 +48,7 @@
           </td>
           <td>
             <input name="email" type="text">
+            {{email}}
             <span class="error"></span>
           </td>
         </tr>
