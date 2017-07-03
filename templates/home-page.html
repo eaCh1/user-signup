@@ -3,54 +3,27 @@
 {% block content %}
 
   <h1>Signup</h1>
-  <form action="/welcome" method="POST">
+  <form action="/validate" method="POST">
     <table>
       <tbody>
         <tr>
-          <td>
-            <label for="username">Username</label>
-          </td>
-          <td>
-            <input name="username" type="text">
-            {{username}}
-            <span class="error">
-              {% if username|length == 1 %}
-              That's not a valid username
-              {% endif %}
-            </span>
-          </td>
+          <td><label for="username">Username</label></td>
+          <td><input name="username" type="text" value="{{username}}">
+          <span class="error">{{usernameerror}}</span></td>
         </tr>
         <tr>
-          <td>
-            <label for="password">Password</label>
-          </td>
-          <td>
-            <input name="password" type="password">
-            <span class="error">
-              {% if password|length == 1 %}
-              <td>That's not a valid password</td>
-              {% endif %}
-            </span>
-          </td>
+          <td><label for="password">Password</label></td>
+          <td><input name="password" type="password">
+          <span class="error">{{passworderror}}</span></td>
         </tr>
         <tr>
-          <td>
-            <label for="verify">Verify Password</label>
-          </td>
-          <td>
-            <input name="verify" type="password">
-            <span class="error"></span>
-          </td>
+          <td><label for="verify">Verify Password</label></td>
+          <td><input name="verify" type="password">
+          <span class="error">{{matcherror}}</span></td>
         </tr>
         <tr>
-          <td>
-            <label for="email">Email (optional)</label>
-          </td>
-          <td>
-            <input name="email" type="text">
-            {{email}}
-            <span class="error"></span>
-          </td>
+          <td><label for="email">Email (optional)</label></td>
+          <td><input name="email" type="text" value="{{email}}"></td>
         </tr>
       </tbody>
     </table>
