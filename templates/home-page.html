@@ -19,11 +19,12 @@
         <tr>
           <td><label for="verify">Verify Password</label></td>
           <td><input name="verify" type="password">
-          <span class="error">{{matcherror}}</span></td>
+          <span class="error">{{verifyerror}}</span></td>
         </tr>
         <tr>
           <td><label for="email">Email (optional)</label></td>
-          <td><input name="email" type="text" value="{{email}}"></td>
+          <td><input name="email" type="text" value="{{email}}">
+          <span class="error">{{emailerror}}</span></td>
         </tr>
       </tbody>
     </table>
